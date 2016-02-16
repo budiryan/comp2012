@@ -1,0 +1,15 @@
+01:52:58 **** Rebuild of configuration Debug for project labb1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o blue.o "..\\blue.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o red.o "..\\red.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o green.o "..\\green.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o purpleMain.o "..\\purpleMain.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o yellowProgram.o "..\\yellowProgram.cpp" 
+g++ -o labb1.exe yellowProgram.o red.o purpleMain.o green.o blue.o 
+purpleMain.o: In function `main':
+C:\Users\BudiRyan\Documents\GitHub\comp2012\labb1\Debug/../purpleMain.cpp:8: multiple definition of `main'
+yellowProgram.o:C:\Users\BudiRyan\Documents\GitHub\comp2012\labb1\Debug/../yellowProgram.cpp:7: first defined here
+collect2.exe: error: ld returned 1 exit status
+
+01:53:00 Build Finished (took 1s.986ms)
+

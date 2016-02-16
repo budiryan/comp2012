@@ -1,0 +1,5 @@
+class Blue
+{
+public:
+	Blue();
+};

@@ -1,0 +1,5 @@
+class Green
+{
+public:
+	Green();
+};

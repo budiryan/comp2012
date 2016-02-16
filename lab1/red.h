@@ -1,0 +1,5 @@
+class Red
+{
+public:
+	Red();
+};

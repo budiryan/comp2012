@@ -1,0 +1,12 @@
+01:57:03 **** Incremental Build of configuration Default for project lab1 ****
+make all 
+g++ -c purpleMain.cpp
+g++ -c red.cpp 
+g++ -c blue.cpp 
+g++ -o purpleProgram.exe purpleMain.o red.o blue.o
+g++ -o yellowMain.o -c yellowProgram.cpp
+g++ -c green.cpp 
+g++ -o yellowProgram.exe yellowMain.o red.o green.o
+01:57:11 **** Incremental Build of configuration Default for project lab1 ****
+make all 
+make: Nothing to be done for `all'.
