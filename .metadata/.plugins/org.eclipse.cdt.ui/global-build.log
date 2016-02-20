@@ -1,12 +1,5 @@
-01:57:03 **** Incremental Build of configuration Default for project lab1 ****
-make all 
-g++ -c purpleMain.cpp
-g++ -c red.cpp 
-g++ -c blue.cpp 
-g++ -o purpleProgram.exe purpleMain.o red.o blue.o
-g++ -o yellowMain.o -c yellowProgram.cpp
-g++ -c green.cpp 
-g++ -o yellowProgram.exe yellowMain.o red.o green.o
-01:57:11 **** Incremental Build of configuration Default for project lab1 ****
-make all 
-make: Nothing to be done for `all'.
+13:47:32 **** Incremental Build of configuration Debug for project lab2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o PointSet.o "..\\PointSet.cpp" 
+g++ -o lab2.exe main.o PointSet.o Point3D.o 
+Info: Nothing to build for lab2
