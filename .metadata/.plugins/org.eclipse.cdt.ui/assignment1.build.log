@@ -1,0 +1,23 @@
+13:04:49 **** Incremental Build of configuration Debug for project assignment1 ****
+Info: Internal Builder is used for build
+g++ -o assignment1.exe system.o main.o directory.o 
+system.o: In function `ZN6System6promptEv':
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:18: undefined reference to `Directory::get_full_path() const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:34: undefined reference to `System::cd(std::string)'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:45: undefined reference to `System::md(std::string) const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:57: undefined reference to `System::rd(std::string) const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:77: undefined reference to `System::ren(std::string, std::string) const'
+system.o: In function `ZNK6System3dirEv':
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:100: undefined reference to `Directory::get_number_of_children() const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:107: undefined reference to `Directory::list_children() const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:110: undefined reference to `Directory::get_number_of_children() const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../system.cpp:111: undefined reference to `Directory::list_children() const'
+main.o: In function `main':
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../main.cpp:17: undefined reference to `System::System(std::string)'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../main.cpp:23: undefined reference to `System::~System()'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../main.cpp:23: undefined reference to `System::~System()'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\assignment1\Debug/../main.cpp:23: undefined reference to `System::~System()'
+collect2.exe: error: ld returned 1 exit status
+
+13:04:49 Build Finished (took 248ms)
+

@@ -42,10 +42,11 @@ PointSet::~PointSet()
 {
     cout<<"PointSet's destructor!" <<endl;
     // This cout statement is for learning purpose only, which shows when the desstructor will be invoked
+
      // TODO: add your code here
     //Free the allocated memory
     delete [] this->points;
-    this->points = NULL;
+    for(int i = 0; i < this->numPoints ; i++)this->points[i] = NULL;
 }
 
 
@@ -61,7 +62,8 @@ void PointSet::addPoint(const Point3D& p)
 	this->points = new Point3D[this->numPoints];
 	for(int i = 0; i < this->numPoints; i++)points[i] = temp[i];
 	delete [] temp;
-	temp = NULL;
+
+
 }
 
 bool PointSet::contains(const Point3D& p) const

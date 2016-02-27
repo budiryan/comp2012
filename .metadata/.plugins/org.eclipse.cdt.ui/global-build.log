@@ -1,4 +1,7 @@
-20:56:12 **** Incremental Build of configuration Debug for project lab2b ****
+14:10:54 **** Incremental Build of configuration Debug for project lab2b ****
+make all 
+make: Nothing to be done for `all'.
+14:10:58 **** Incremental Build of configuration Debug for project lab2b ****
 make all 
 Building file: ../PointSet.cpp
 Invoking: GCC C++ Compiler
@@ -10,6 +13,3 @@ Invoking: MacOS X C++ Linker
 g++  -o "lab2b"  ./Point3D.o ./PointSet.o ./main.o   
 Finished building target: lab2b
  
-20:56:13 **** Incremental Build of configuration Debug for project lab2b ****
-make all 
-make: Nothing to be done for `all'.

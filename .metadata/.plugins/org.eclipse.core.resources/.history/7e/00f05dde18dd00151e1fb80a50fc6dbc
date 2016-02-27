@@ -45,7 +45,7 @@ PointSet::~PointSet()
      // TODO: add your code here
     //Free the allocated memory
     delete [] this->points;
-    this->points = NULL;
+    for(int i = 0; i < this->numPoints; i++)this->points[i] = NULL;
 }
 
 
@@ -62,6 +62,8 @@ void PointSet::addPoint(const Point3D& p)
 	for(int i = 0; i < this->numPoints; i++)points[i] = temp[i];
 	delete [] temp;
 	temp = NULL;
+
+
 }
 
 bool PointSet::contains(const Point3D& p) const
