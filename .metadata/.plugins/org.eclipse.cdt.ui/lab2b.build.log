@@ -1,15 +1,6 @@
-14:10:58 **** Incremental Build of configuration Debug for project lab2b ****
+02:17:36 **** Incremental Build of configuration Debug for project lab2b ****
 make all 
-Building file: ../PointSet.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"PointSet.d" -MT"PointSet.d" -o "PointSet.o" "../PointSet.cpp"
-Finished building: ../PointSet.cpp
- 
-Building target: lab2b
-Invoking: MacOS X C++ Linker
-g++  -o "lab2b"  ./Point3D.o ./PointSet.o ./main.o   
-Finished building target: lab2b
- 
+make: Nothing to be done for `all'.
 
-14:10:59 Build Finished (took 1s.101ms)
+02:17:36 Build Finished (took 376ms)
 

@@ -56,12 +56,15 @@ void PointSet::addPoint(const Point3D& p)
 	Point3D * temp= new Point3D[this->numPoints];
 	for(int i = 0; i < this->numPoints - 1; i++)temp[i] = this->points[i];
 	temp[this->numPoints - 1] = p;
+
 	delete [] this->points;
 	this->points = NULL;
 	this->points = new Point3D[this->numPoints];
-	for(int i = 0; i < this->numPoints; i++)points[i] = temp[i];
-	delete [] temp;
-	temp = NULL;
+
+	this->points = temp;
+	//for(int i = 0; i < this->numPoints; i++)this->points[i] = temp[i];
+	//delete [] temp;
+	//temp = NULL;
 }
 
 bool PointSet::contains(const Point3D& p) const
@@ -69,7 +72,6 @@ bool PointSet::contains(const Point3D& p) const
    // TODO: add your code here
    for(int i = 0;i < this->numPoints ; i++)if(this->points[i].equal(p))return true;
    return false;
-
 }
 
 void PointSet::print() const

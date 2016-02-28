@@ -113,3 +113,55 @@ void System::dir() const
 	}
 }
 
+System::System(string root_name){
+	root = new Directory(root_name, NULL);
+	current_directory = root;
+}
+
+System:: ~System(){
+	delete root;
+	root = NULL;
+	current_directory = NULL;
+}
+
+bool System:: cd(string directory_name){
+	if(directory_name == ".."){
+		if(current_directory == root)return false;
+		else{
+			current_directory = current_directory->get_parent();
+			return true;
+		}
+	}
+	else if(current_directory->find_child_by_name(directory_name)){
+		current_directory = current_directory->find_child_by_name(directory_name);
+		return true;
+	}
+	else return false;
+}
+
+bool System:: md(string directory_name)const{
+	if(current_directory->find_child_by_name(directory_name) != NULL)return false;
+	else{
+		current_directory->add_child(directory_name);
+		return true;
+	}
+}
+
+bool System:: rd(string directory_name)const{
+	if(current_directory->find_child_by_name(directory_name) == NULL)return false;
+	else{
+		current_directory->remove_child(directory_name);
+		return true;
+	}
+}
+
+
+bool System:: ren(string old_directory_name, string new_directory_name)const{
+	if(current_directory->find_child_by_name(old_directory_name) == NULL)return false;
+	else if(current_directory->find_child_by_name(new_directory_name))return false;
+	else{
+		current_directory->find_child_by_name(old_directory_name)->set_name(new_directory_name);
+		return true;
+	}
+}
+

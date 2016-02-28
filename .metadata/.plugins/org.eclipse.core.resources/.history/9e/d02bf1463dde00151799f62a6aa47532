@@ -1,0 +1,130 @@
+/*
+ * Submit this file.
+ *
+ * Add the missing implementations of all member functions to this file according to directory.h.
+ */
+
+#include "directory.h"
+#include <iostream>
+
+using namespace std;
+
+Directory :: Directory(string name, Directory * parent){
+	this->number_of_children = 0;
+	this->children = new Directory * [0];
+	this->name = name;
+	this->parent = parent;
+}
+
+Directory :: ~Directory(){
+	for(int i = 0 ; i < this->number_of_children; i++){
+		delete this->children[i];
+		this->children[i] = NULL;
+	}
+}
+
+void Directory :: set_name(string new_name){
+	this->name = new_name;
+}
+
+Directory * Directory :: get_parent()const{
+	return this->parent;
+}
+
+
+int Directory:: get_number_of_children()const{
+	return this->number_of_children;
+}
+
+string Directory:: get_full_path()const{
+	string target_string = "";
+	const Directory * temp = this;
+	while(temp != NULL){
+		if(temp->parent != NULL){
+			target_string = "\\" + temp->name + target_string;
+		}
+		else{
+			target_string = temp->name + target_string;
+		}
+		temp = temp->parent;
+	}
+	return target_string;
+}
+
+void Directory:: add_child(string child_name){
+	Directory ** temp_children = new Directory * [this->number_of_children + 1];
+	//Transfer from old to temp array
+	for(int i = 0; i < this->number_of_children; i++){
+		temp_children[i] = this->children[i];
+	}
+	delete [] this->children;
+	this->children = NULL;
+	temp_children[this->number_of_children] = new Directory(child_name,this);
+	this->number_of_children+++;
+	this->children = temp_children;
+}
+
+void Directory:: remove_child(string child_name){
+
+	//Mark which index to be deleted and delete it
+	int index_to_be_removed;
+	for(int i = 0; i < this->number_of_children; i++){
+		if(this->children[i]->name == child_name){
+			index_to_be_removed = i;
+			delete this->children[i];
+			this->children[i] == NULL;
+		}
+	}
+
+	//Create a temporary array
+	Directory ** temp_children = new Directory * [this->number_of_children];
+
+	//Copy all the elements of the array
+	for(int i = 0; i < this->number_of_children ; i++)temp_children[i] = this->children[i];
+
+	//Delete the old array
+	delete [] this->children;
+	this->children = NULL;
+
+
+	//if it is the last element of the old array
+	if(index_to_be_removed == this->number_of_children - 1){
+		this->number_of_children--;
+		this->children = new Directory * [this->number_of_children];
+		for(int i = 0 ; i < this->number_of_children; i++){
+			this->children[i] = temp_children[i];
+		}
+	}
+	//If it is not the last element of the old array
+	else{
+		this->number_of_children--;
+		for(int i = 0; i < this->number_of_children; i++){
+			if(i == index_to_be_removed){
+				//From now on, shift the elements to the left
+				for(int x = i ; x < this->number_of_children; x++){
+					temp_children[i] = temp_children[i+1];
+				}
+				break;
+			}
+		}
+		this->children = new Directory * [this->number_of_children];
+		//Transfer the elements from the temp array to the new array
+		for(int i = 0 ; i < this->number_of_children; i++)this->children[i] = temp_children[i];
+	}
+
+}
+
+void Directory:: list_children()const{
+	for(int i = 0; this->number_of_children ; i++){
+		cout<<this->children[i]->name<<endl;
+	}
+}
+
+Directory * Directory :: find_child_by_name(string child_name)const{
+	for(int i = 0; i < this->number_of_children ; i++){
+		if(this->children[i]->name == child_name)return this->children[i];
+	}
+	return NULL;
+}
+
+
