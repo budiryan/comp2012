@@ -54,21 +54,6 @@ string Directory:: get_full_path()const{
 	return target_string;
 }
 
-//void Directory:: add_child(string child_name){
-//	Directory ** temp_children = new Directory * [this->number_of_children + 1];
-//	//Transfer from old to temp array
-//	for(int i = 0; i < this->number_of_children; i++)temp_children[i] = this->children[i];
-//
-//	//Delete the old data
-//	delete [] this->children;
-//	this->children = NULL;
-//
-//	temp_children[this->number_of_children] = new Directory(child_name,this);
-//
-//
-//	this->children = temp_children;
-//	number_of_children++;
-//}
 void Directory :: add_child(string child_name){
 	//Incrase the number of children
 	this->number_of_children++;
@@ -82,6 +67,7 @@ void Directory :: add_child(string child_name){
 
 	//Delete the old memory
 	delete [] this->children;
+	this->children = NULL;
 
 	//Initialize new memory
 	this->children = new Directory * [this->number_of_children];
@@ -89,7 +75,7 @@ void Directory :: add_child(string child_name){
 	//Transfer from temp array to main array
 	for(int i = 0; i < this->number_of_children; i++)this->children[i] = temp_children[i];
 
-	//Delete the temp memory
+	//Make the temp_children pointer point to NULL
 	delete [] temp_children;
 	temp_children = NULL;
 }

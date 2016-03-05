@@ -1,0 +1,18 @@
+#include <Polygon.h>
+#include <iostream>
+using namespace std;
+
+Polygon :: Polygon(): n_points(0),points(NULL){
+	cout<<"Initialized by Poygon's default constructor"<<endl;
+}
+
+Polygon :: Polygon(const Polygon& s){
+	this->n_points = s.n_points;
+	this->points = new Point2D [this->n_points];
+	for(int i = 0 ; i < this->n_points ; i++){
+		this->points[i] = s.points[i];
+	}
+}
+
+
+

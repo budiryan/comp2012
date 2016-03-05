@@ -1,5 +1,6 @@
-02:39:16 **** Incremental Build of configuration Release for project assignment1 ****
+02:32:16 **** Incremental Build of configuration Release for project assignment1 ****
 Info: Internal Builder is used for build
 g++ -O3 -Wall -c -fmessage-length=0 -o directory.o "..\\directory.cpp" 
+g++ -O3 -Wall -c -fmessage-length=0 -o system.o "..\\system.cpp" 
 g++ -o assignment1.exe system.o main.o directory.o 
 Info: Nothing to build for assignment1

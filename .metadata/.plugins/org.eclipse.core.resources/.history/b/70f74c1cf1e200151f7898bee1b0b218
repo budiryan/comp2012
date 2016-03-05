@@ -1,0 +1,30 @@
+#include "Triangle.h"
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+Triangle :: Triangle(const Point2D points[],int numPoints):Polygon(points,numPoints){
+	if(this->n_points != 3){
+		cout<<"Illegal! Number of points should be 3"<<endl;
+		exit(1); //Exit the program
+	}
+}
+
+Triangle :: ~Triangle(){
+	cout<<"Triangle's destructor"<<endl;
+}
+
+void Triangle :: print()const{
+	this->print();
+	cout<<"Triangle's perimeter: "<<this->perimeter()<<endl;
+	cout<<"Triangle's area: "<<this->area()<<endl;
+
+}
+
+double Triangle :: perimeter() const{
+	bool collinear = (points[0].y - points[1].y) * (points[2].x - points[1].x) == (points[2].y - points[1].y) * (points[0].x - points[1].x) ? true : false;
+	if(collinear){
+
+	}
+
+}

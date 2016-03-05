@@ -44,7 +44,6 @@ int main()
 	        << set3.contains(Point3D(1, 2, 3)) << endl;
 	   cout << "Does PointSet3 have the point (1.5, 2.5, 3)? "
 	        << set3.contains(Point3D(1.5, 2.5, 3)) << endl;
-	   cout << endl;
 
 	   return 0;
 }
