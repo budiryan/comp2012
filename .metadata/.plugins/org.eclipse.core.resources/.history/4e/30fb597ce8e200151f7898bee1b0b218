@@ -1,5 +1,0 @@
-#include <Polygon.h>
-#include <iostream>
-Polygon :: Polygon(){
-	cout<<"Initialized by Poygon's default constructor"<<endl;
-}

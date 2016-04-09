@@ -54,13 +54,13 @@ string Directory:: get_full_path()const{
 	return target_string;
 }
 
+
 void Directory :: add_child(string child_name){
 	//Incrase the number of children
 	this->number_of_children++;
 
 	//Allocate a new dynamic memory
 	Directory ** temp_children = new Directory * [this->number_of_children];
-
 	//Fill in the temp array
 	for(int i = 0; i < this->number_of_children - 1; i++)temp_children[i] = this->children[i];
 	temp_children[this->number_of_children-1] = new Directory(child_name,this);
@@ -83,7 +83,8 @@ void Directory :: add_child(string child_name){
 
 void Directory:: remove_child(string child_name){
 
-	//Mark which index to be deleted and delete it
+	//Reduce the number of children by 1
+	this->number_of_children--;
 	for(int i = 0; i < this->number_of_children ; i++){
 		if(this->children[i]->name == child_name){
 			//Release the allocated memory
@@ -92,9 +93,6 @@ void Directory:: remove_child(string child_name){
 
 			//Shift elements of the array to the left
 			for(int j = i ; j < this->number_of_children; j++)this->children[j] = this->children[j+1];
-
-			//Reduce the number of children by 1
-			this->number_of_children--;
 			break;
 		}
 	}

@@ -1,0 +1,7 @@
+03:58:59 **** Incremental Build of configuration Debug for project lab7 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o lab7.exe main.o 
+
+03:59:00 Build Finished (took 943ms)
+

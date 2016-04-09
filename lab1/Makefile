@@ -10,7 +10,7 @@ purpleMain.o: purpleMain.cpp red.h blue.h
 	g++ -c purpleMain.cpp
 	
 yellowMain.o: yellowProgram.cpp red.h green.h
-	g++ -o yellowMain.o -c yellowProgram.cpp
+	g++ -c yellowProgram.cpp
 	
 red.o: red.cpp red.h
 	g++ -c red.cpp 

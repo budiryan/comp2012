@@ -1,8 +1,0 @@
-#include <Polygon.h>
-#include <iostream>
-using namespace std;
-Polygon :: Polygon(){
-	this->n_points = 0;
-	this->points = NULL;
-	cout<<"Initialized by Poygon's default constructor"<<endl;
-}
