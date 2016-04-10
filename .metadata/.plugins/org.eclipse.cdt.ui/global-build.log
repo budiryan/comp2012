@@ -1,6 +1,5 @@
-Info: Nothing to build for lab7
-Info: Nothing to build for lab7
-03:58:59 **** Incremental Build of configuration Debug for project lab7 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o lab7.exe main.o 
+01:58:05 **** Incremental Build of configuration Default for project assignment2 ****
+make all 
+g++ -Wall -D_WIN_ -o pa2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Robot.o object/Weapon.o object/WeaponBlade.o object/Main.o object/Arena.o pdcurses.dll
+g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/todo.o TODO.cpp
+g++ -Wall -D_WIN_ -D_TESTING -o newPA2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Weapon.o object/WeaponBlade.o object/Main.o ./todo/*.o pdcurses.dll

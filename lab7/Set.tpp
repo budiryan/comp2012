@@ -10,9 +10,8 @@ using namespace std;
 // Default constructor: Construct an empty set
 
 template<typename T>
-Set<T>::Set() {
-	this->elements = NULL;
-	this->size = 0;
+Set<T>::Set() :
+		elements(NULL), size(0) {
 }
 
 // Other constructor: Initialize the data members with the given parameters */
@@ -62,6 +61,24 @@ int Set<T>::findElement(const T& element) const {
 	for (int i = 0; i < this->size; i++)
 		if (this->elements[i] == element)
 			return i;
+	return -1;
+}
+
+template<> int Set<float>::findElement(const float& element) const {
+	for (int i = 0; i < this->size; i++){
+		if (fabs(this->elements[i] - element)
+				< numeric_limits<double>::epsilon())
+			return i;
+	}
+	return -1;
+}
+
+template<> int Set<double>::findElement(const double& element) const {
+	for (int i = 0; i < this->size; i++){
+		if (fabs(this->elements[i] - element)
+				< numeric_limits<double>::epsilon())
+			return i;
+	}
 	return -1;
 }
 
@@ -172,7 +189,7 @@ const Set<T>& Set<T>::operator=(const Set<T> & b) {
 	return *this;
 }
 
-// Overload operator<< to allow output of objects in Set<T> type
+//Overload operator<< to allow output of objects in Set<T> type
 template<typename T>
 ostream& operator <<(ostream& os, const Set<T> & a) {
 	os << '{';

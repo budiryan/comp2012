@@ -8,6 +8,7 @@
 #include "Robot.h"
 #include <cmath>
 #include <iostream>
+
 extern const int ARENA_W;
 extern const int ARENA_H;
 
@@ -31,7 +32,7 @@ Robot::~Robot() {
 		delete weapons[i];
 }
 
-#ifndef _TESTING
+//#ifndef _TESTING
 
 int Robot::attack(Robot* robot, Weapon* weapon) {
 	if (robot == nullptr || weapon == nullptr)
@@ -45,7 +46,7 @@ int Robot::attack(Robot* robot, Weapon* weapon) {
 	return damage;
 }
 
-#endif
+//#endif
 
 void Robot::setWeapon(Weapon* aWeapons[], int count) {
 	for (int i = 0; i < num_of_weapons; i++)

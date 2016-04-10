@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="cdt.managedbuild.toolchain.gnu.mingw.base.1611639964" name="Default">
+	<configuration id="cdt.managedbuild.toolchain.gnu.mingw.base.2080663424" name="Default">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser">
 				<language id="org.eclipse.cdt.core.g++">
@@ -8,6 +8,7 @@
 						<entry kind="macro" name="_WIN_" value=""/>
 					</resource>
 					<resource project-relative-path="Arena.cpp">
+						<entry kind="macro" name="_TESTING" value=""/>
 						<entry kind="macro" name="_WIN_" value=""/>
 					</resource>
 					<resource project-relative-path="main.cpp">
@@ -24,6 +25,7 @@
 						<entry kind="macro" name="_WIN_" value=""/>
 					</resource>
 					<resource project-relative-path="Robot.cpp">
+						<entry kind="macro" name="_TESTING" value=""/>
 						<entry kind="macro" name="_WIN_" value=""/>
 					</resource>
 					<resource project-relative-path="newArena.cpp">

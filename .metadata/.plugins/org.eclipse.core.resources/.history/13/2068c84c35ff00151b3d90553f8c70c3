@@ -1,0 +1,18 @@
+#ifndef __TODO
+#define __TODO
+#include "Robot.h"
+#include "Weapon.h"
+#include <iostream>
+using namespace std;
+
+class WeaponRifle: public Weapon{
+
+
+};
+
+
+
+
+
+
+#endif

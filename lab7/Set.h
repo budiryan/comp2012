@@ -10,6 +10,8 @@
 #include <iostream>
 #include <set>
 #include <algorithm>
+#include <cmath>
+#include <limits>
 using namespace std;
 
 // Forward declaration to make the declaration of operator<< possible

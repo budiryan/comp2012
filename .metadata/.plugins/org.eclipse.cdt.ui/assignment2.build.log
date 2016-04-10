@@ -1,9 +1,8 @@
-02:14:42 **** Incremental Build of configuration Default for project assignment2 ****
+01:58:05 **** Incremental Build of configuration Default for project assignment2 ****
 make all 
 g++ -Wall -D_WIN_ -o pa2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Robot.o object/Weapon.o object/WeaponBlade.o object/Main.o object/Arena.o pdcurses.dll
-object/Controller.o:Controller.cpp:(.text+0x25): undefined reference to `Arena::Arena()'
-collect2.exe: error: ld returned 1 exit status
-make: *** [pa2.exe] Error 1
+g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/todo.o TODO.cpp
+g++ -Wall -D_WIN_ -D_TESTING -o newPA2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Weapon.o object/WeaponBlade.o object/Main.o ./todo/*.o pdcurses.dll
 
-02:14:42 Build Finished (took 713ms)
+01:58:06 Build Finished (took 1s.409ms)
 

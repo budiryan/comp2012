@@ -1,0 +1,53 @@
+#ifndef __TODO
+#define __TODO
+#include "Robot.h"
+#include "Weapon.h"
+#include <iostream>
+using namespace std;
+
+class WeaponRifle: public Weapon {
+public:
+	WeaponRifle();
+
+	bool isInRange(int att_x, int att_y, int ene_x, int ene_y) const;
+
+	virtual ~WeaponRifle();
+
+	int attack();
+
+protected:
+};
+
+class WeaponSuperRifle: public Weapon {
+public:
+	WeaponSuperRifle();
+
+	bool isInRange(int att_x, int att_y, int ene_x, int ene_y) const;
+
+	virtual ~WeaponSuperRifle();
+
+	int attack();
+protected:
+};
+
+class WeaponMissle: public Weapon {
+	WeaponMissle(int p);
+
+	virtual ~WeaponMissle();
+
+	int attack();
+
+protected:
+	bool usedForAttack;
+};
+
+class WeaponFist: public Weapon{
+	WeaponFist(int p);
+
+	virtual ~WeaponFist();
+
+	int attack();
+
+};
+
+#endif

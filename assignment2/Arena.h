@@ -13,7 +13,6 @@ extern const int ARENA_W;
 extern const int ARENA_H;
 
 
-
 /**
  * The Arena class
  * The Arena class is a model class that contains the Robot on it.
