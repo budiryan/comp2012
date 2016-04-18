@@ -1,0 +1,192 @@
+/*
+ * TODO.cpp
+ *
+ *  Created on: Apr 11, 2016
+ *      Author: jeffrywicaksana
+ */
+
+#include "TODO.h"
+
+//Overriding Function
+
+int Robot::attack(Robot* robot, Weapon* weapon) {
+	if (robot == nullptr|| weapon == nullptr)
+	return 0;
+
+	if (robot->my_ally == this->my_ally || !(weapon->isInRange(x, y, robot->x, robot->y)))
+	return 0;
+	if((weapon->getName () == "Fist") && (att <= robot->att)) {
+		//For Fist Algorithm
+		int damage = max(robot->att * weapon->attack() - this->def, 1);
+		this->setHP(this->hp - damage);
+		return damage;
+	}
+	int damage = max(this->att * weapon->attack() - robot->def, 1);
+	robot->setHP(robot->hp - damage);
+	return damage;
+}
+
+//Implementation of WeaponRifle
+WeaponRifle::WeaponRifle() {
+	weapon_name = "Rifle";
+	min_range = 1;
+	max_range = 8;
+	power = 10;
+}
+
+WeaponRifle::~WeaponRifle() {
+}
+
+int WeaponRifle::attack() {
+	return power;
+}
+
+bool WeaponRifle::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
+	int distanceX = abs(att_x - ene_x);
+	int distanceY = abs(att_y - ene_y);
+	if (((distanceX >= min_range) && (distanceX <= max_range)
+			&& (att_y == ene_y))
+			|| ((distanceY <= max_range) && (distanceY >= min_range)
+					&& (att_x == ene_x)))
+		return true;
+	return false;
+}
+
+//Implementation of Weapon Super Rifle
+WeaponSuperRifle::WeaponSuperRifle() {
+	weapon_name = "SuperRifle";
+	min_range = 1;
+	max_range = 10;
+	power = 15;
+}
+
+WeaponSuperRifle::~WeaponSuperRifle() {
+}
+
+int WeaponSuperRifle::attack() {
+	return power;
+}
+
+bool WeaponSuperRifle::isInRange(int att_x, int att_y, int ene_x,
+		int ene_y) const {
+	int distanceX = abs(att_x - ene_x);
+	int distanceY = abs(att_y - ene_y);
+	if (((distanceX >= min_range) && (distanceX <= max_range)
+			&& (att_y == ene_y))
+			|| ((distanceY <= max_range) && (distanceY >= min_range)
+					&& (att_x == ene_x)))
+		return true;
+	return false;
+}
+
+//Implementation of WeaponMissile
+WeaponMissle::WeaponMissle(int aPower) {
+	weapon_name = "Missle";
+	min_range = 3;
+	max_range = 8;
+	power = aPower;
+	shoot_count = true;
+}
+
+WeaponMissle::~WeaponMissle() {
+}
+
+int WeaponMissle::attack() {
+	shoot_count = false;
+	return power;
+}
+
+bool WeaponMissle::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
+	if (!shoot_count)
+		return false;
+	int distance = abs(att_x - ene_x) + abs(att_y - ene_y);
+	if (distance >= min_range && distance <= max_range)
+		return true;
+	return false;
+}
+
+//Implementation of WeaponFist
+WeaponFist::WeaponFist(int aPower) {
+	weapon_name = "Fist";
+	min_range = 1;
+	max_range = 1;
+	power = aPower;
+}
+
+WeaponFist::~WeaponFist() {
+}
+
+int WeaponFist::attack() {
+	return power;
+}
+
+bool WeaponFist::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
+	int distance = abs(att_x - ene_x) + abs(att_y - ene_y);
+	if (distance == min_range)
+		return true;
+	return false;
+}
+
+//Implementation of Robot Healer
+RobotHealer::RobotHealer(string aName, int aMax_hp, int aSpeed, int aAtt,
+		int aDef) :
+		Robot(aName, aMax_hp, aSpeed, aAtt, aDef) {
+}
+
+RobotHealer::~RobotHealer() {
+} //No need to do anything, weapon will be deleted by base destructor
+
+int RobotHealer::attack(Robot* robot, Weapon* weapon) {
+	if (robot == nullptr|| weapon == nullptr)
+	return 0;
+	int robot_x, robot_y;
+	robot->getXY(robot_x,robot_y);
+	if (!(weapon->isInRange(x, y, robot_x, robot_y)))
+	return 0;
+
+	//Healing Friend
+	if(robot->getAlly() == this->my_ally) {
+		if((abs(x-robot_x) + abs(y-robot_y)) == 1) {
+			int newHP = min(robot->getHP() + 100, robot->getMaxHP());
+			robot->setHP(newHP);
+			return -100;
+		}
+		return 0;
+	}
+	// Attacking the enemy
+	if((weapon->getName () == "Fist") && (att <= robot->getAtt()) ) {
+		//For Fist Algorithm
+		int damage = max(robot->getAtt() * weapon->attack() - this->def, 1);
+		this->setHP(this->hp - damage);
+		return damage;
+	}
+	int damage = max(this->att * weapon->attack() - robot->getDef(), 1);
+	robot->setHP(robot->getHP() - damage);
+	return damage;
+}
+//Implementation of RobotHopper
+RobotHopper::RobotHopper(string aName, int aMax_hp, int aAtt, int aDef) :
+		Robot(aName, aMax_hp, 3, aAtt, aDef) {
+}
+
+RobotHopper::~RobotHopper() {
+} //No need to do anything, weapon will be deleted by base destructor
+bool RobotHopper::isInRange(int aX, int aY) const {
+	if (aX < 0 || aX > ARENA_W || aY < 0 || aY > ARENA_H)
+		return false;
+
+	if ((abs(aX - x) + abs(aY - y) == speed) && (x != aX) && (y != aY)) {
+		return true;
+	}
+
+	return false;
+}
+//Implementation of Robot Hopping Healer
+RobotHoppingHealer::RobotHoppingHealer(string aName, int aMax_hp, int aAtt,
+		int aDef) :
+		Robot(aName, aMax_hp, 3, aAtt, aDef), RobotHealer(aName, aMax_hp, 3,
+				aAtt, aDef), RobotHopper(aName, aMax_hp, aAtt, aDef) {
+}
+
+RobotHoppingHealer::~RobotHoppingHealer() {
+} //No need to do anything, weapon will be deleted by base destructor

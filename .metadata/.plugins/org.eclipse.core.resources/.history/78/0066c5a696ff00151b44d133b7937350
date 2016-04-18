@@ -1,0 +1,89 @@
+#ifndef __TODO
+#define __TODO
+#include "Robot.h"
+#include "Weapon.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class WeaponRifle: public Weapon {
+public:
+	WeaponRifle();
+
+	bool isInRange(int att_x, int att_y, int ene_x, int ene_y) const;
+
+	virtual ~WeaponRifle();
+
+	int attack();
+
+protected:
+};
+
+class WeaponSuperRifle: public Weapon {
+public:
+	WeaponSuperRifle();
+
+	bool isInRange(int att_x, int att_y, int ene_x, int ene_y) const;
+
+	virtual ~WeaponSuperRifle();
+
+	int attack();
+protected:
+};
+
+class WeaponMissle: public Weapon {
+public:
+	WeaponMissle(int p);
+
+	virtual ~WeaponMissle();
+
+	int attack();
+
+protected:
+	bool usedForAttack;
+};
+
+class WeaponFist: public Weapon {
+public:
+	WeaponFist(int p);
+
+	virtual ~WeaponFist();
+
+	int attack();
+
+protected:
+};
+
+class RobotHealer: public Robot {
+public:
+	RobotHealer(string s, int n, int health, int speeds, int attk, int def);
+
+	virtual ~RobotHealer();
+
+	virtual void move(int aX, int aY);
+
+	virtual int attack(RobotHealer*, Weapon *);
+
+	virtual bool isInRange(int aX, int aY) const;
+
+protected:
+
+};
+
+class RobotHopper: public Robot {
+public:
+	RobotHopper(string,int,int,int);
+
+	virtual ~RobotHopper();
+
+	virtual void move(int aX, int aY);
+
+	virtual int attack(RobotHopper*, Weapon*);
+
+	virtual bool isInRange(int aX, int aY)const;
+
+protected:
+
+};
+
+#endif

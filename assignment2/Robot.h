@@ -17,7 +17,6 @@ const int MAX_WEAPON = 5;
 enum ally {WARRIOR, ENEMY, ALL_ROBOTS};
 extern const char* ALLYNAME[3];
 
-
 /**
  * Robot is a model class the models a robot (cf. chess piece). Each robot can move and fight.
  * It has its health point, attack point, and defense point. It also has a list of weapons (at

@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ifndef" key="selection"/>
+		<item value="union" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ifndef"/>
-			<item value="_TESTING"/>
-			<item value="missile"/>
-			<item value="missle"/>
+			<item value="union"/>
+			<item value="set"/>
+			<item value="WeaponMissle"/>
 			<item value="attack"/>
-			<item value="attack()"/>
-			<item value="attack()&apos;"/>
-			<item value="isInRange"/>
+			<item value="move"/>
+			<item value="new"/>
+			<item value="missle"/>
+			<item value="attacku"/>
 		</list>
 		<list key="replacehistory">
+			<item value="WeaponMissile"/>
+			<item value="float"/>
 			<item value="Vehicle"/>
 		</list>
 	</section>

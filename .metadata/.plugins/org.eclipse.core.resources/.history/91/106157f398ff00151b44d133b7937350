@@ -1,0 +1,142 @@
+/*
+ * TODO.cpp
+ *
+ *  Created on: Apr 10, 2016
+ *      Author: Budi Ryan
+ */
+#include "TODO.h"
+
+/*
+ *
+ * IMPLEMENTATION OF WEAPONRIFLE
+ *
+ *
+ */
+WeaponRifle::WeaponRifle() {
+	weapon_name = "Rifle";
+	min_range = 1;
+	max_range = 8;
+	power = 10;
+}
+
+WeaponRifle::~WeaponRifle() {
+}
+
+int WeaponRifle::attack() {
+	return power;
+}
+
+bool WeaponRifle::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
+	int distance = abs(att_x - ene_x) + abs(att_y - ene_y);
+	if (distance >= min_range && distance <= max_range
+			&& (att_x == ene_x || att_y == ene_y))
+		return true;
+
+	return false;
+}
+
+/*
+ *
+ *
+ * IMPLEMENTATION OF WEAPONSUPERRIFLE
+ *
+ *
+ */
+WeaponSuperRifle::WeaponSuperRifle() {
+	weapon_name = "Super Rifle";
+	min_range = 1;
+	max_range = 10;
+	power = 15;
+}
+
+WeaponSuperRifle::~WeaponSuperRifle() {
+}
+
+int WeaponSuperRifle::attack() {
+	return power;
+}
+
+bool WeaponSuperRifle::isInRange(int att_x, int att_y, int ene_x,
+		int ene_y) const {
+	int distance = abs(att_x - ene_x) + abs(att_y - ene_y);
+	if (distance >= min_range && distance <= max_range
+			&& (att_x == ene_x || att_y == ene_y))
+		return true;
+
+	return false;
+}
+
+/*
+ *
+ *
+ * IMPLEMENTATION OF WEAPONMISSLE
+ *
+ *
+ */
+WeaponMissle::WeaponMissle(int p) {
+	weapon_name = "Missle";
+	min_range = 3;
+	max_range = 8;
+	power = p;
+	usedForAttack = false;
+}
+
+WeaponMissle::~WeaponMissle() {
+
+}
+
+int WeaponMissle::attack() {
+	usedForAttack = true;
+	return power;
+}
+
+/*
+ *
+ *
+ * IMPLEMENTATION FOR WEAPONFIST
+ *
+ *
+ */
+WeaponFist::WeaponFist(int p) {
+	weapon_name = "Fist";
+	min_range = 1;
+	max_range = 1;
+	power = p;
+}
+
+WeaponFist::~WeaponFist() {
+}
+
+int WeaponFist::attack() {
+	return power;
+}
+
+/*
+ *
+ *
+ * IMPLEMENTATION OF ROBOTHEALER
+ *
+ *
+ */
+
+RobotHealer::RobotHealer(string s, int n, int health, int speeds, int attk,
+		int deff) {
+	name = s;
+	max_hp = health;
+	speed = speeds;
+	x = 0;
+	y = 0;
+	endTurn = false;
+	my_ally = ALL_ROBOTS;
+	att = attk;
+	def = deff;
+	num_of_weapons = 0;
+	for(int i = 0 ; i < MAX_WEAPON ; i++)weapons[i] = nullptr;
+}
+
+RobotHealer :: ~RobotHealer(){
+
+}
+
+
+

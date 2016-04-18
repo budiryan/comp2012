@@ -8,7 +8,7 @@
 #ifndef DEFINITION_H_
 #define DEFINITION_H_
 
-#define _DEBUG_
+//#define _DEBUG_
 //const int CLEAR_WIN = -1;
 
 enum gamestate {NAVIGATE, COMMAND, SELECT_FREE_SPACE, SELECT_WEAPON, SELECT_ENEMY, MENU};

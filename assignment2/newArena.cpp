@@ -14,17 +14,13 @@
 
 Arena::Arena() {
 	//Constructor of RobotHealer: Name, HP, speed, attack, defense
-	//Robot* warrior_a = new RobotHealer("A Healer", 1000, 2, 4, 30);
+	Robot* warrior_a = new RobotHealer("A Healer", 1000, 2 , 4, 30);
 	//Constructor of RobotHopper: Name, HP, attack, defense
-	//Robot* warrior_b = new RobotHopper("B Hopper", 1800, 4, 200);
+	Robot* warrior_b = new RobotHopper("B Hopper", 1800, 4, 200);
 
 	//Constructor of RobotHoppingHealer: Name, HP, attack, defense
-	//RobotHopper* c = new RobotHoppingHealer("C Hop-Healer", 500, 4, 40);
-	//RobotHealer* d = new RobotHoppingHealer("D Hop-Healer", 1000, 3, 20);
-	Robot* warrior_a = new Robot("A", 1000, 2, 4, 30);
-	Robot* warrior_b = new Robot("B", 1000, 2, 4, 30);
-	Robot* c = new Robot("C", 1000, 2, 4, 30);
-	Robot* d = new Robot("D", 1000, 2, 4, 30);
+	RobotHopper* c = new RobotHoppingHealer("C Hop-Healer", 500, 4, 40);
+	RobotHealer* d = new RobotHoppingHealer("D Hop-Healer", 1000, 3, 20);
 
 	Robot* warrior_c = c;
 	Robot* warrior_d = d;
@@ -40,7 +36,7 @@ Arena::Arena() {
 	//Parameter for the following Weapons means power.
 	Weapon* w1[] = { new WeaponBlade(50), new WeaponRifle() };
 	Weapon* w2[] = { new WeaponBlade(150), new WeaponFist(100) };
-	Weapon* w3[] = { new WeaponBlade(80), new WeaponMissle(400) };
+	Weapon* w3[] = { new WeaponBlade(80), new WeaponMissile(400) };
 	Weapon* w4[] = { new WeaponBlade(40), new WeaponSuperRifle() };
 	warrior_a->setWeapon(w1, 2);
 	warrior_b->setWeapon(w2, 2);
