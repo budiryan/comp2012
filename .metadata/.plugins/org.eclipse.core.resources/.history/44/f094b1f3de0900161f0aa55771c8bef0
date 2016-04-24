@@ -1,0 +1,33 @@
+/*
+ * StudentTestScore.cpp
+ *
+ *  Created on: Apr 24, 2016
+ *      Author: Budi Ryan
+ */
+#include "StudentTestScore.h"
+#include "Average.h"
+#include "PrintLessThan.h"
+
+StudentTestScore::StudentTestScore(std::string n, float s) :
+		name(n), score(s) {}
+
+float StudentTestScore::getScore() const {
+	return score;
+}
+
+std::string StudentTestScore::getName() const {
+	return name;
+}
+
+Average::Average() :
+		sum(0), count(0) {
+}
+
+void Average::operator()(const StudentTestScore &s) {
+	//TODO: implement
+}
+
+float Average::result() const {
+	return this->sum / this->count;
+}
+

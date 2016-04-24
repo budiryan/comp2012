@@ -145,6 +145,7 @@ int main() {
 
 	// delete "City of God" in map
 	// ADD YOUR CODE HERE
+	cout<<"mapMovie Content after deletion:"<<endl;
 	mapMovie.erase("City of God");
 	printMapUsingIterator(mapMovie);
 	return 0;

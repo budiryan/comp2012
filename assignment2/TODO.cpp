@@ -43,7 +43,7 @@ bool WeaponRifle::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
  *
  */
 WeaponSuperRifle::WeaponSuperRifle() {
-	weapon_name = "Super Rifle";
+	weapon_name = "SuperRifle";
 	min_range = 1;
 	max_range = 10;
 	power = 15;
@@ -74,7 +74,7 @@ bool WeaponSuperRifle::isInRange(int att_x, int att_y, int ene_x,
  *
  */
 WeaponMissile::WeaponMissile(int p) {
-	weapon_name = "Missle";
+	weapon_name = "Missile";
 	min_range = 3;
 	max_range = 8;
 	power = p;
@@ -86,14 +86,13 @@ WeaponMissile::~WeaponMissile() {
 }
 
 int WeaponMissile::attack() {
-	if (!usedForAttack) {
+	if (!usedForAttack)
 		usedForAttack = true;
-		return power;
-	}
 	return power;
 }
 
-bool WeaponMissile::isInRange(int att_x, int att_y, int ene_x, int ene_y) const {
+bool WeaponMissile::isInRange(int att_x, int att_y, int ene_x,
+		int ene_y) const {
 	int distance = abs(att_x - ene_x) + abs(att_y - ene_y);
 	if (usedForAttack == true)
 		return false;
@@ -136,6 +135,8 @@ int WeaponFist::attack() {
  */
 
 int Robot::attack(Robot* robot, Weapon* weapon) {
+	if (robot == nullptr || weapon == nullptr)
+		return 0;
 	int damage;
 	int enemyX;
 	int enemyY;
@@ -174,13 +175,14 @@ RobotHealer::~RobotHealer() {
 }
 
 int RobotHealer::attack(Robot * robot, Weapon * weapon) {
+	if (robot == nullptr || weapon == nullptr)
+		return 0;
 	int enemyX;
 	int enemyY;
 	robot->getXY(enemyX, enemyY);
 
 	//If the weapon is out of range...
-	if (!(weapon->isInRange(x, y, enemyX, enemyY))
-			|| getAlly() == robot->getAlly())
+	if (!(weapon->isInRange(x, y, enemyX, enemyY)))
 		return 0;
 
 	//In case it heals...

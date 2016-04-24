@@ -1,18 +1,6 @@
-00:49:40 **** Build of configuration Default for project assignment2 ****
+00:52:22 **** Incremental Build of configuration Default for project assignment2 ****
 make all 
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/Controller.o Controller.cpp
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/View.o View.cpp
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/Robot.o Robot.cpp 
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/Weapon.o Weapon.cpp
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/WeaponBlade.o WeaponBlade.cpp
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/Main.o main.cpp
-g++ -Wall -D_WIN_ -c -std=c++11 -o ./object/Arena.o Arena.cpp
-g++ -Wall -D_WIN_ -o pa2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Robot.o object/Weapon.o object/WeaponBlade.o object/Main.o object/Arena.o pdcurses.dll
-g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/testArena.o Arena.cpp
-g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/testArena2.o newArena.cpp
-g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/testRobot.o Robot.cpp
-g++ -Wall -D_WIN_ -D_TESTING -c -std=c++11 -o ./todo/todo.o TODO.cpp
-g++ -Wall -D_WIN_ -D_TESTING -o newPA2.exe -lncurses_lib/pdcurses -static -L".\\" -std=c++11 object/Controller.o object/View.o object/Weapon.o object/WeaponBlade.o object/Main.o ./todo/*.o pdcurses.dll
+make: Nothing to be done for `all'.
 
-00:49:45 Build Finished (took 4s.786ms)
+00:52:23 Build Finished (took 541ms)
 

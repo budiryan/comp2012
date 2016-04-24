@@ -1,2 +1,13 @@
-Info: Nothing to build for lab7
-Info: Nothing to build for lab7
+13:48:10 **** Incremental Build of configuration Debug for project lab8 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
+g++ -o lab8.exe main.o StudentTestScore.o 
+Info: Nothing to build for lab8
+13:48:21 **** Incremental Build of configuration Debug for project lab8 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
+g++ -o lab8.exe main.o StudentTestScore.o 
+13:48:48 **** Incremental Build of configuration Debug for project lab8 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
+g++ -o lab8.exe main.o StudentTestScore.o 
