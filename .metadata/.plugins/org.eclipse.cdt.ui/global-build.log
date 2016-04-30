@@ -1,13 +1,5 @@
-13:48:10 **** Incremental Build of configuration Debug for project lab8 ****
+18:36:38 **** Incremental Build of configuration Debug for project lab9 ****
 Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
-g++ -o lab8.exe main.o StudentTestScore.o 
-Info: Nothing to build for lab8
-13:48:21 **** Incremental Build of configuration Debug for project lab8 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
-g++ -o lab8.exe main.o StudentTestScore.o 
-13:48:48 **** Incremental Build of configuration Debug for project lab8 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
-g++ -o lab8.exe main.o StudentTestScore.o 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o SeparateChaining.o "..\\SeparateChaining.cpp" 
+g++ -o lab9.exe main.o SeparateChaining.o QuadraticProbing.o OpenAddressing.o LinearProbing.o DoubleHashing.o 
+Info: Nothing to build for lab9

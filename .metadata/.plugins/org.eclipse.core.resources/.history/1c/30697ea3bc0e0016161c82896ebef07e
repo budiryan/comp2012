@@ -1,0 +1,23 @@
+/*
+ * QuadraticProbing.cpp
+ *
+ *  Created on: Apr 30, 2016
+ *      Author: Budi Ryan
+ */
+#include "QuadraticProbing.h"
+
+
+QuadraticProbing :: QuadraticProbing(int a):OpenAddressing(a){}
+
+int QuadraticProbing :: getIndexByhashing(int keyValue){
+	int initValue = keyValue % 6;
+	int i = 1;
+	while(data[initValue] != EMPTY){
+		initValue = (initValue + (i * i)) % bucketSize;
+		i++;
+	}
+	return initValue;
+}
+
+
+

@@ -1,0 +1,15 @@
+/*
+ * DoubleHashing.cpp
+ *
+ *  Created on: Apr 30, 2016
+ *      Author: Budi Ryan
+ */
+#include "OpenAddressing.h"
+
+class DoubleHashing : public OpenAddressing{
+	DoubleHashing(int);
+
+	c;
+
+};
+
