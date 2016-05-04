@@ -1,0 +1,24 @@
+/*
+ * Submit this file.
+ * Implement all functions according to Word.h in this file.
+ */
+#include "Word.h"
+
+Word::Word(string _spelling, string _definition) :
+		spelling(_spelling), definition(_definition) {
+
+}
+
+Word::Word(const Word & another) {
+	//No dynamic memory, no need for deep-copying
+	this->definition = another.definition;
+	this->spelling = another.spelling;
+}
+
+ostream& operator<<(ostream& os, const Word& word) {
+	os << "\"" << word.spelling << "\"" << " means " << "\"" << word.definition
+			<< "\"";
+	return os;
+}
+
+

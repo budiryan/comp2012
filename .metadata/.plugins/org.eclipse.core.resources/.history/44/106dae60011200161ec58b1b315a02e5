@@ -1,0 +1,28 @@
+/*
+ * main.cpp
+ *
+ *  Created on: May 4, 2016
+ *      Author: Budi Ryan
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string key = "pear";
+	//100 111 103
+	if (!key.length())
+		return 0;
+	int result = 0, temp, i = 0, const_multiplier = 1;
+	const int hash_const = 27;
+	for (string::iterator it = key.begin(); it != key.end(); it++, i++) {
+		for (int k = 0; k < i; k++)
+			const_multiplier *= hash_const;
+		temp = const_multiplier * (*it);
+		result += temp;
+		const_multiplier = 1;
+	}
+	cout<<result;
+	return 0;
+}
+//112 //101 //97 //114

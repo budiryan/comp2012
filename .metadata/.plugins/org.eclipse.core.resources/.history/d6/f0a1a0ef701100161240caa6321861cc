@@ -1,0 +1,31 @@
+/*
+ * main.cpp
+ *
+ *  Created on: May 4, 2016
+ *      Author: Budi Ryan
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isPrime(int n) {
+	//isprime?
+	int flag = 0;
+	for (int i = 2; i <= n / 2; ++i) {
+		if (n % i == 0) {
+			flag = 1;
+			break;
+		}
+	}
+	if (flag == 0)
+		return true;
+	else
+		return false;
+}
+
+int main() {
+
+	cout<<"result "<<isPrime(2)<<endl;
+	return 0;
+}
+

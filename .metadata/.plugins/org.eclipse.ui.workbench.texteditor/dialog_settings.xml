@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="union" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="node"/>
 			<item value="union"/>
 			<item value="set"/>
 			<item value="WeaponMissle"/>
@@ -15,7 +16,6 @@
 			<item value="move"/>
 			<item value="new"/>
 			<item value="missle"/>
-			<item value="attacku"/>
 		</list>
 		<list key="replacehistory">
 			<item value="WeaponMissile"/>

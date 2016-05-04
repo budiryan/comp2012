@@ -1,0 +1,42 @@
+/*
+ * main.cpp
+ *
+ *  Created on: May 4, 2016
+ *      Author: Budi Ryan
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isPrime(int n) {
+	//determine whether it is a prime number or not
+	int flag = 0;
+	for (int i = 2; i <= n / 2; ++i) {
+		if (n % i == 0) {
+			flag = 1;
+			break;
+		}
+	}
+	if (flag == 0)
+		return true;
+	else
+		return false;
+}
+
+int hashFunction(string& key) {
+	unsigned int i = 0;
+	int result = 0;
+	//search the nth prime number
+	while (i <= key.length()) {
+		result++;
+		if (isPrime(result))
+			i++;
+	}
+	return result;
+}
+int main() {
+	string a = "c";
+	cout << "result: " << hashFunction(a) << endl;
+	return 0;
+}
+

@@ -1,0 +1,40 @@
+/*
+ * main.cpp
+ *
+ *  Created on: May 4, 2016
+ *      Author: Budi Ryan
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+
+int main(){
+	string key = "cat";
+	if(!key.length())return 0;
+	int result = 0 ,temp;
+	const int hash_const  = 27;
+	int i = 0;
+	int const_num = 0;
+	int const_multiplier = 1;
+	for(string::iterator it = key.begin(); it != key.end() ; it++ , i++){
+		for(int k = 0 ; k < i ; k++){
+			const_num++;
+			for(int j = 0 ; j < const_num ; j++)
+				const_multiplier *= hash_const;
+		}
+		temp = const_multiplier * (*it);
+		result += temp;
+		const_multiplier = 1;
+	}
+
+	cout<<"result: "<<result;
+
+
+	return 0;
+}
+
+
+

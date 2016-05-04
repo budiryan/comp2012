@@ -1,5 +1,24 @@
-18:36:38 **** Incremental Build of configuration Debug for project lab9 ****
+Info: Nothing to build for assignment3
+Info: Nothing to build for assignment3
+22:00:42 **** Incremental Build of configuration Debug for project testing ****
 Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o SeparateChaining.o "..\\SeparateChaining.cpp" 
-g++ -o lab9.exe main.o SeparateChaining.o QuadraticProbing.o OpenAddressing.o LinearProbing.o DoubleHashing.o 
-Info: Nothing to build for lab9
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o testing.exe main.o 
+Info: Nothing to build for assignment3
+22:04:46 **** Incremental Build of configuration Debug for project testing ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o testing.exe main.o 
+22:06:23 **** Incremental Build of configuration Debug for project testing ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o testing.exe main.o 
+22:09:05 **** Incremental Build of configuration Debug for project testing ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o testing.exe main.o 
+22:10:04 **** Incremental Build of configuration Debug for project assignment3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Word.o "..\\Word.cpp" 
+g++ -o assignment3.exe main.o Word.o Inventor.o 
+Info: Nothing to build for assignment3

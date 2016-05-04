@@ -1,1 +1,9 @@
-Info: Nothing to build for assignment1
+21:16:17 **** Rebuild of configuration Release for project assignment1 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o directory.o "..\\directory.cpp" 
+g++ -O3 -Wall -c -fmessage-length=0 -o system.o "..\\system.cpp" 
+g++ -O3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o assignment1.exe system.o main.o directory.o 
+
+21:16:18 Build Finished (took 1s.888ms)
+

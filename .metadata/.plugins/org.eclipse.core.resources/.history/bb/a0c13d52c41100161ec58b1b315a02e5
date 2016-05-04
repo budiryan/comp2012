@@ -1,0 +1,13 @@
+/*
+ * Submit this file.
+ * Implement all functions according to Dictionary.h in this file.
+ */
+
+#include "Dictionary.h"
+
+
+template <typename T>
+Dictionary :: Dictionary(int _size,int(*_hashFunction)(string&)){
+
+
+}

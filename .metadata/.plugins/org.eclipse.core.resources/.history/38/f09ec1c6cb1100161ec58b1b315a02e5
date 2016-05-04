@@ -1,0 +1,56 @@
+/*
+ * Submit this file.
+ * Implement all functions according to Dictionary.h in this file.
+ */
+
+#include "Dictionary.h"
+
+template<typename T>
+Dictionary<T>::Dictionary(int _size, int (*_hashFunction)(string&)) :
+		size(_size), hashFunction(_hashFunction), table(NULL) {
+
+}
+
+template<typename T>
+Dictionary<T>::Dictionary(const Dictionary<T>& another) {
+	//Deep copying is required here
+	this->size = another.size;
+	this->table = new SortedLinkedList<T>[another.size];
+	this->table += another.table;
+	this->hashFunction = another.hashFunction;
+}
+
+template<typename T>
+void Dictionary<T>::add(string key, T* data) {
+	//TODO: implement
+
+}
+
+template<typename T>
+void Dictionary<T>::remove(string key) {
+	//TODO: implement
+
+}
+
+template<typename T>
+T* Dictionary<T>::lookup(string key) {
+	//TODO: implement
+
+}
+
+template<typename T>
+void Dictionary<T>::resize(int newSize) {
+	//TODO: implement
+
+}
+
+template<typename T>
+void Dictionary<T>::changeHashFunction(int (*_hashFunction)(string&)) {
+	this->hashFunction = _hashFunction;
+}
+
+template<typename T>
+void Dictionary<T> ::operator+=(const Dictionary<T>& another) {
+
+}
+

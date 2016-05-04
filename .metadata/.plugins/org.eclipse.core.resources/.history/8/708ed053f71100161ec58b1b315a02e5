@@ -1,0 +1,78 @@
+/*
+ * Submit this file.
+ * Implement all functions according to Dictionary.h in this file.
+ */
+
+#include "Dictionary.h"
+
+template<typename T>
+Dictionary<T>::Dictionary(int _size, int (*_hashFunction)(string&)) :
+		size(_size), hashFunction(_hashFunction) {
+	this->table = new SortedLinkedList<T> [_size];
+}
+
+template<typename T>
+Dictionary<T>::Dictionary(const Dictionary<T>& another) {
+	//Deep copying is required here
+	this->size = another.size;
+	this->table = new SortedLinkedList<T> [another.size];
+	for (int i = 0; i < another.size; i++)
+		this->table[i] += another.table[i];
+	this->hashFunction = another.hashFunction;
+}
+
+template<typename T>
+Dictionary<T>::~Dictionary() {
+	delete[] this->table;
+	this->table = NULL;
+}
+
+template<typename T>
+void Dictionary<T>::add(string key, T* data) {
+	//TODO: implement
+	int targetIndex;
+	targetIndex = this->hashFunction(key) % this->size;
+	this->table[targetIndex].add(key, data);
+}
+
+template<typename T>
+void Dictionary<T>::remove(string key) {
+	for (int i = 0; i < this->size; i++)
+		this->table[i]->remove(key);
+}
+
+template<typename T>
+T* Dictionary<T>::lookup(string key) {
+	Node<T> * curr = NULL;
+	for (int i = 0; i < this->size; i++) {
+		curr = this->table[i].get(key);
+		if (curr != NULL)
+			return curr->data;
+	}
+	return NULL;
+}
+
+template<typename T>
+void Dictionary<T>::resize(int newSize) {
+	SortedLinkedList<T> * anotherDictionary = new SortedLinkedList<T>[newSize];
+	Node<T> * curr = NULL;
+	for(int i = 0 ; i < this->size ;i++){
+		curr = this->table[i]->popHead();
+
+	}
+
+
+	//Reset to null
+
+}
+
+template<typename T>
+void Dictionary<T>::changeHashFunction(int (*_hashFunction)(string&)) {
+	this->hashFunction = _hashFunction;
+}
+
+template<typename T>
+void Dictionary<T>::operator+=(const Dictionary<T>& another) {
+
+}
+

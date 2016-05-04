@@ -1,0 +1,105 @@
+/*
+ * Submit this file.
+ * Implement all functions according to SortedLinkedList.h in this file.
+ */
+#include "SortedLinkedList.h"
+
+template<typename T>
+SortedLinkedList<T>::SortedLinkedList() :
+		head(NULL) {
+}
+
+template<typename T>
+SortedLinkedList<T>::~SortedLinkedList(){
+	Node<T> * curr = this->head;
+	Node<T> * prev = NULL;
+	while(curr != NULL){
+		prev = curr;
+		curr = curr->next;
+		delete prev;
+		prev = NULL;
+	}
+}
+
+template<typename T>
+void SortedLinkedList<T>::add(string key, T* data) {
+	Node<T> * newNode = new Node<T>(key, data, NULL);
+	Node<T> * curr = this->head;
+	Node<T> * prev = NULL;
+	//case 1 insert an empty list
+	if (curr == NULL) {
+		this->head = newNode;
+		head->next = NULL;
+		return;
+	}
+
+	//case 2 insert at the beginning
+	if (newNode->key < curr->key) {
+		newNode->next = head;
+		head = newNode;
+		return;
+	}
+	for( ; newNode->next != NULL && newNode->key > curr->key ; curr = curr->next);
+	//case 4 insert at the middle or the end
+	newNode->next = curr->next;
+	curr->next = newNode;
+}
+
+template<typename T>
+void SortedLinkedList<T>:: remove(string key){
+	Node<T> * curr = this->head;
+	Node<T> * prev = NULL;
+	//find the item to be deleted
+	while(curr != NULL && curr->key != key){
+		prev = curr;
+		curr = curr->next;
+	}
+	if(curr != NULL){
+		if(curr == this->head)
+			this->head = this->head->next;
+		else
+			prev->next = curr->next;
+		delete curr;
+		curr = NULL;
+	}
+	else return; //If the data is not found, do nothing
+}
+
+template<typename T>
+Node<T>* SortedLinkedList<T>::get(string key){
+	Node<T> * curr = this->head;
+	while(curr != NULL){
+		if(curr->key == key )return curr;
+	}
+	return NULL;
+}
+
+template<typename T>
+Node<T>* SortedLinkedList<T>::popHead(){
+	if(this->head == NULL)return NULL;
+	Node<T> * curr = this->head;
+	this->head = this->head->next;
+	return curr;
+}
+
+template<typename T>
+void SortedLinkedList<T>::operator+= (const SortedLinkedList<T>& another){
+	Node<T> * another_curr = another.head;
+	while(another_curr != NULL){
+		this->add(another_curr->key,another_curr->data);
+		another_curr = another_curr->next;
+	}
+}
+template<typename S>
+ostream& operator<<(ostream& os, const SortedLinkedList<S>& list){
+	SortedLinkedList<S> curr;
+	curr += list;
+	Node<S> * curr_node = curr.head;
+	while(curr_node != NULL){
+		os<<curr_node->key;
+		os<<endl;
+	}
+	return os;
+}
+
+
