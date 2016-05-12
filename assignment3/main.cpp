@@ -171,6 +171,7 @@ int main()
 		wordDict2.print();
 
 		cout << endl << endl;
+
 	}
 
 	{

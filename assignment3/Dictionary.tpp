@@ -30,15 +30,14 @@ Dictionary<T>::~Dictionary() {
 template<typename T>
 void Dictionary<T>::add(string key, T* data) {
 	//TODO: implement
-	int targetIndex;
-	targetIndex = this->hashFunction(key) % this->size;
+	int targetIndex = this->hashFunction(key) % this->size;
 	this->table[targetIndex].add(key, data);
 }
 
 template<typename T>
 void Dictionary<T>::remove(string key) {
-	for (int i = 0; i < this->size; i++)
-		this->table[i].remove(key);
+	int targetIndex = this->hashFunction(key) % this->size;
+	this->table[targetIndex].remove(key);
 }
 
 template<typename T>
@@ -54,32 +53,27 @@ T* Dictionary<T>::lookup(string key) {
 
 template<typename T>
 void Dictionary<T>::resize(int newSize) {
-
 	SortedLinkedList<T> * anotherDictionary = new SortedLinkedList<T>[newSize];
 	Node<T> * curr = NULL;
-	Node<T> * prev;
 	T * newData = NULL;
 	int targetIndex;
 	for(int i = 0 ; i < this->size ;i++){
 		curr = this->table[i].popHead();
-		prev = NULL;
 		while(curr != NULL){
-			prev = curr;
-			targetIndex = this->hashFunction(prev->key) % newSize;
-			newData = new T(*(prev->data));
-			anotherDictionary[targetIndex].add(prev->key, newData);
-			curr = curr->next;
-			delete prev;
-			delete newData;
+			targetIndex = this->hashFunction(curr->key) % newSize;
+			newData = new T(*(curr->data));
+			anotherDictionary[targetIndex].add(curr->key, newData);
+			delete curr;
+			curr = this->table[i].popHead();
 		}
 	}
 	//no need to delete again in the end coz of pop head
+	delete [] this->table;
 	this->table = anotherDictionary;
 	this->size = newSize;
 	curr = NULL;
-	prev = NULL;
 	anotherDictionary = NULL;
-	newData = NULL;
+
 }
 
 template<typename T>
@@ -90,7 +84,7 @@ void Dictionary<T>::changeHashFunction(int (*_hashFunction)(string&)) {
 
 template<typename T>
 void Dictionary<T>::operator+=(const Dictionary<T>& another) {
-	for(int i = 0 ; i < another.size ;i++){
+	for (int i = 0; i < another.size; i++) {
 		//add all elements to 1 linked list and then do resize
 		this->table[0] += another.table[i];
 	}

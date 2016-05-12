@@ -16,29 +16,21 @@ Inventor::Inventor(const Inventor& another) :
 //No dynamic variables, no need for deep copying
 }
 
-bool isPrime(int n) {
-	//to determine whether it is a prime number or not
-	int flag = 0;
-	for (int i = 2; i <= n / 2; ++i) {
-		if (n % i == 0) {
-			flag = 1;
-			break;
-		}
-	}
-	if (flag == 0)
-		return true;
-	else
-		return false;
-}
-
-int Inventor :: hashFunction(string& key) {
+int Inventor::hashFunction(string& key) {
 	unsigned int i = 0;
-	int result = 0;
+	int result = 0, flag = 0;
 	//search the nth prime number
 	while (i <= key.length()) {
 		result++;
-		if (isPrime(result))
+		for (int k = 2; k <= result / 2; ++k) {
+			if (result % k == 0) {
+				flag = 1;
+				break;
+			}
+		}
+		if (flag == 0)
 			i++;
+		flag = 0;
 	}
 	return result;
 }

@@ -19,6 +19,7 @@ SortedLinkedList<T>::~SortedLinkedList() {
 		delete prev;
 		prev = NULL;
 	}
+	head = NULL;
 }
 
 template<typename T>
@@ -28,7 +29,6 @@ void SortedLinkedList<T>::add(string key, T* data) {
 	//case 1 insert an empty list
 	if (curr == NULL) {
 		this->head = newNode;
-		head->next = NULL;
 		return;
 	}
 
@@ -98,11 +98,9 @@ void SortedLinkedList<T>::operator+=(const SortedLinkedList<T>& another) {
 		//need dynamic memory allocation coz T is a pointer, string no need la
 		newData = new T(*(another_curr->data));
 		this->add(another_curr->key, newData);
+
 		//advance the pointer
 		another_curr = another_curr->next;
-		//Delete and make it to NULL
-		delete newData;
-		newData = NULL;
 	}
 }
 
