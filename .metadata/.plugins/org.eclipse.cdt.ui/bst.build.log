@@ -1,0 +1,15 @@
+04:49:27 **** Rebuild of configuration Debug for project bst ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o bst-test.o "..\\bst-test.cpp" 
+g++ -o bst.exe bst-test.o 
+bst-test.o: In function `main':
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:21: undefined reference to `BST<int>::contains(int const&) const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:26: undefined reference to `BST<int>::insert(int const&)'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:30: undefined reference to `BST<int>::find_min() const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:35: undefined reference to `BST<int>::print(int) const'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:40: undefined reference to `BST<int>::remove(int const&)'
+C:\Users\BudiRyan\Documents\GitHub\comp2012\bst\Debug/../bst-test.cpp:44: undefined reference to `BST<int>::find_max() const'
+collect2.exe: error: ld returned 1 exit status
+
+04:49:28 Build Finished (took 567ms)
+

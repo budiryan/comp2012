@@ -1,6 +1,6 @@
-03:18:15 **** Build of configuration Default for project assignment2 ****
-make all 
-make: Nothing to be done for `all'.
+04:49:02 **** Clean-only build of configuration Default for project assignment2 ****
+make clean 
+rm -f *.exe *.out object/*.o  todo/*.o
 
-03:18:17 Build Finished (took 2s.318ms)
+04:49:04 Build Finished (took 1s.238ms)
 

@@ -1,1 +1,5 @@
-Info: Nothing to build for lab9
+04:49:08 **** Clean-only build of configuration Debug for project lab9 ****
+rm -rf SeparateChaining.d QuadraticProbing.o OpenAddressing.d OpenAddressing.o DoubleHashing.o QuadraticProbing.d lab9.exe main.o LinearProbing.d DoubleHashing.d main.d LinearProbing.o SeparateChaining.o 
+
+04:49:08 Build Finished (took 170ms)
+

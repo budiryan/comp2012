@@ -1,1 +1,5 @@
-Info: Nothing to build for lab3
+04:49:06 **** Clean-only build of configuration Debug for project lab3 ****
+rm -rf Point2D.d main.o Polygon.o Triangle.d Triangle.o Point2D.o Polygon.d main.d lab3.exe 
+
+04:49:06 Build Finished (took 181ms)
+

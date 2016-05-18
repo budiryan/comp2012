@@ -1,6 +1,7 @@
-19:58:44 **** Incremental Build of configuration Default for project lab1 ****
-make all 
-make: Nothing to be done for `all'.
+04:49:04 **** Clean-only build of configuration Default for project lab1 ****
+make clean 
+rm -rf *.o
+rm -rf *.exe
 
-19:58:45 Build Finished (took 222ms)
+04:49:05 Build Finished (took 451ms)
 

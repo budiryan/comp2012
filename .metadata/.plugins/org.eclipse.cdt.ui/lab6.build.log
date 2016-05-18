@@ -1,7 +1,5 @@
-07:25:04 **** Rebuild of configuration Debug for project lab6 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o lab6.exe main.o 
+04:49:07 **** Clean-only build of configuration Debug for project lab6 ****
+rm -rf main.o main.d lab6.exe 
 
-07:25:06 Build Finished (took 1s.441ms)
+04:49:07 Build Finished (took 116ms)
 

@@ -1,7 +1,5 @@
-15:18:01 **** Incremental Build of configuration Debug for project testing ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o testing.exe main.o 
+04:49:08 **** Clean-only build of configuration Debug for project testing ****
+rm -rf testing.exe main.d main.o 
 
-15:18:02 Build Finished (took 740ms)
+04:49:08 Build Finished (took 146ms)
 

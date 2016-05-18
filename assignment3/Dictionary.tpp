@@ -53,13 +53,13 @@ T* Dictionary<T>::lookup(string key) {
 
 template<typename T>
 void Dictionary<T>::resize(int newSize) {
-	SortedLinkedList<T> * anotherDictionary = new SortedLinkedList<T>[newSize];
+	SortedLinkedList<T> * anotherDictionary = new SortedLinkedList<T> [newSize];
 	Node<T> * curr = NULL;
 	T * newData = NULL;
 	int targetIndex;
-	for(int i = 0 ; i < this->size ;i++){
+	for (int i = 0; i < this->size; i++) {
 		curr = this->table[i].popHead();
-		while(curr != NULL){
+		while (curr != NULL) {
 			targetIndex = this->hashFunction(curr->key) % newSize;
 			newData = new T(*(curr->data));
 			anotherDictionary[targetIndex].add(curr->key, newData);
@@ -68,7 +68,7 @@ void Dictionary<T>::resize(int newSize) {
 		}
 	}
 	//no need to delete again in the end coz of pop head
-	delete [] this->table;
+	delete[] this->table;
 	this->table = anotherDictionary;
 	this->size = newSize;
 	curr = NULL;
@@ -78,8 +78,13 @@ void Dictionary<T>::resize(int newSize) {
 
 template<typename T>
 void Dictionary<T>::changeHashFunction(int (*_hashFunction)(string&)) {
-	this->hashFunction = _hashFunction;
-	this->resize(this->size);
+	if (this->hashFunction == _hashFunction)
+		return;
+
+	else {
+		this->hashFunction = _hashFunction;
+		this->resize(this->size);
+	}
 }
 
 template<typename T>

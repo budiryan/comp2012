@@ -1,1 +1,5 @@
-Info: Nothing to build for lab5
+04:49:07 **** Clean-only build of configuration Debug for project lab5 ****
+rm -rf Carrot.d Animal.o Carrot.o main.d lab5.exe Pig.o main.o Rose.o Organism.o Cat.o Organism.d Pig.d Animal.d Rose.d Plant.o Cat.d Plant.d 
+
+04:49:07 Build Finished (took 290ms)
+

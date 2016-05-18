@@ -1,6 +1,7 @@
-02:52:57 **** Incremental Build of configuration Debug for project lab2b ****
-make all 
-make: Nothing to be done for `all'.
+04:49:05 **** Clean-only build of configuration Debug for project lab2b ****
+make clean 
+rm -rf  ./Point3D.o ./PointSet.o ./main.o  ./Point3D.d ./PointSet.d ./main.d  lab2b
+ 
 
-02:52:57 Build Finished (took 397ms)
+04:49:06 Build Finished (took 1s.503ms)
 

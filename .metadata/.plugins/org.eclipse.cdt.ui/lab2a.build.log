@@ -1,1 +1,5 @@
-Info: Nothing to build for lab2a
+04:49:05 **** Clean-only build of configuration Debug for project lab2a ****
+rm -rf PointSet.o lab2a.exe Point3D.d main.d main.o Point3D.o PointSet.d 
+
+04:49:05 Build Finished (took 184ms)
+

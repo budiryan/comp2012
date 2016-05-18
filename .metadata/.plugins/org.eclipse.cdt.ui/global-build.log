@@ -1,9 +1,7 @@
-15:17:14 **** Rebuild of configuration Debug for project testing ****
+15:04:58 **** Rebuild of configuration Debug for project assignment3 ****
 Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Word.o "..\\Word.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Inventor.o "..\\Inventor.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o testing.exe main.o 
-Info: Nothing to build for testing
-15:18:01 **** Incremental Build of configuration Debug for project testing ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o testing.exe main.o 
+g++ -o assignment3.exe main.o Word.o Inventor.o 
+Info: Nothing to build for assignment3

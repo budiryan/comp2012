@@ -1,8 +1,5 @@
-18:02:46 **** Rebuild of configuration Debug for project lab8 ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StudentTestScore.o "..\\StudentTestScore.cpp" 
-g++ -o lab8.exe main.o StudentTestScore.o 
+04:49:08 **** Clean-only build of configuration Debug for project lab8 ****
+rm -rf main.o StudentTestScore.d main.d StudentTestScore.o lab8.exe 
 
-18:02:54 Build Finished (took 8s.74ms)
+04:49:08 Build Finished (took 193ms)
 
